@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: doctor-service
+        uri:     http://localhost:3132/
+        predicates:
+        - Path=/doctor/**
+        
+      - id: patient-service
+        uri:     http://localhost:3133/
+        predicates:
+        - Path=/patient/**  
+      
+     
